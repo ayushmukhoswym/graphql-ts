@@ -1,0 +1,28 @@
+{
+  "name": "graphql-ts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "compile": "tsc",
+    "start": "node ./dist/index.js",
+    "dev": "nodemon --exec node --loader ts-node/esm src/index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@apollo/server": "^4.9.0",
+    "@types/pg": "^8.10.2",
+    "dotenv": "^16.3.1",
+    "graphql": "^16.7.1",
+    "pg": "^8.11.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.4.5",
+    "nodemon": "^3.0.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.1.6"
+  }
+}
