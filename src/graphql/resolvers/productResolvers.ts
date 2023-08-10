@@ -1,5 +1,7 @@
-// @ts-ignore
-import { categories } from "../../../database/db.js";
+interface Category {
+  id: string;
+  name: string;
+}
 
 interface args {
   id: string;
@@ -13,13 +15,17 @@ interface product {
   price?: number;
   image?: string;
   onSale?: boolean;
-  categoryId : string;
+  categoryId: string;
 }
 [];
 
 export const Product = {
-    category: (parent: product, { id }: args) => {
-      const categoryId: string = parent.categoryId;
-      return categories.find(category => category.id === categoryId); 
-    }
-  }
+  category: (
+    parent: product,
+    { id }: args,
+    { categories }: { categories: Category[] }
+  ) => {
+    const categoryId: string = parent.categoryId;
+    return categories.find((category) => category.id === categoryId);
+  },
+};
